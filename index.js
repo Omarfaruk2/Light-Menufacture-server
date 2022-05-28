@@ -43,7 +43,7 @@ async function run() {
         //     const id = req.params.id
         //     const info = req.body
         //     const filter = { id: id }
-        //     const options = { upsert: true }
+
         //     const updateDoc = {
         //         $set: info,
         //     }
