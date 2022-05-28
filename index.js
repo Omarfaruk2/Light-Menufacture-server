@@ -1,5 +1,5 @@
-// lightShow
-// JnHk1xwKCOp8IjiJ
+lightShow
+JnHk1xwKCOp8IjiJ
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb')
 const express = require('express')
 const cors = require('cors')
