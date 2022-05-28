@@ -1,4 +1,4 @@
-// lightShow 
+lightShow
 // JnHk1xwKCOp8IjiJ
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb')
 const express = require('express')
