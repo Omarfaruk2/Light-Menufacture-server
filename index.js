@@ -1,5 +1,5 @@
-lightShow
-JnHk1xwKCOp8IjiJ
+// lightShow
+// JnHk1xwKCOp8IjiJ
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb')
 const express = require('express')
 const cors = require('cors')
@@ -34,6 +34,13 @@ async function run() {
             res.send(result)
         })
 
+        // // Add Items prodects
+        app.post('/tool', async (req, res) => {
+            const newItem = req.body
+            const result = await toolsCollection.insertOne(newItem)
+            res.send(result)
+        })
+
 
         app.get('/tool/:id', async (req, res) => {
             const id = req.params.id
@@ -58,6 +65,20 @@ async function run() {
             res.send(result)
         })
 
+        app.delete('/order/:email', async (req, res) => {
+            const id = req.params.id
+            const query = { _id: ObjectId(id) }
+            const result = await OrderCollection.deleteOne(query)
+            res.send(result)
+        })
+
+        // deleted itemms
+        app.delete('/tool/:id', async (req, res) => {
+            const id = req.body.id
+            const query = { _id: ObjectId(id) }
+            const result = await toolsCollection.deleteOne(query)
+            res.send(result)
+        })
 
         app.get('/review', async (req, res) => {
             const query = {}
